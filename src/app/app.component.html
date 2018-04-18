@@ -1,7 +1,12 @@
 <div class="field">
-    <h2  class="lable">My location:</h2>
+    <h2 class="lable">My location:</h2>
     <div id="locationField">
         <input #search placeholder="Enter your address" type="text">
     </div>
 </div>
-<button>send</button>
+<button (click)="calculateDistances()">send</button>
+<ul>
+    <li *ngFor="let branch of branchesDistances">
+        {{branch.name}}, and distance in meters: {{branch.distance}}
+    </li>
+</ul>

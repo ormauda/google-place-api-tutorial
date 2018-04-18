@@ -4,10 +4,12 @@
             "name": "Walmart",
             "branches": [
                 {
+                    "name": "lame branch",
                     "latitude": 32.824597,
                     "longitude": 34.98953689999996
                 },
                 {
+                    "name": "good branch",
                     "latitude": 32.8777597,
                     "longitude": 34.889425325
                 }
@@ -17,10 +19,12 @@
             "name": "COSTCO",
             "branches": [
                 {
+                    "name": "tree branch",
                     "latitude": 32.820597,
                     "longitude": 34.99353689999996
                 },
                 {
+                    "name": "branchy branch",
                     "latitude": 32.8777507,
                     "longitude": 34.889425325
                 }

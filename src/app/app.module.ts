@@ -5,6 +5,7 @@ import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -14,9 +15,10 @@ import { FormsModule } from '@angular/forms';
     imports: [
         AgmCoreModule.forRoot({
             apiKey: "AIzaSyCFMVspe4imyzVC649S6RfUPdTTbjGRTWM",
-            libraries: ["places"]
+            libraries: ["places", "geometry"]
         }),
         BrowserModule,
+        HttpClientModule,
         FormsModule,
     ],
     providers: [],
