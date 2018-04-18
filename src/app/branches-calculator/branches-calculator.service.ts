@@ -37,7 +37,6 @@ export class SimpleBranchesCalculatorService implements BranchesCalculatorServic
                     new google.maps.LatLng(branch.latitude, branch.longitude), 
                     new google.maps.LatLng(latitude, longitude)
                 );
-                //updatedBranch.distance = Math.hypot(branch.latitude - latitude, branch.longitude - longitude);
                 branchesDistances.push(updatedBranch);
             })
         })

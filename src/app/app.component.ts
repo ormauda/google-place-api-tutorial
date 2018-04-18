@@ -59,6 +59,7 @@ export class AppComponent implements OnInit {
         this.branchesDistances = 
             this.branchesCalculatorService.getBranchesDistanceFrom(this.latitude, this.longitude);
 
+        this.branchesDistances.sort((a: IBranch, b: IBranch) => a.distance > b.distance ? 1 : -1 );
     }
 
     private setCurrentPosition() {
