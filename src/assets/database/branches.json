@@ -1,0 +1,30 @@
+{
+    "markets": [
+        {
+            "name": "Walmart",
+            "branches": [
+                {
+                    "latitude": 32.824597,
+                    "longitude": 34.98953689999996
+                },
+                {
+                    "latitude": 32.8777597,
+                    "longitude": 34.889425325
+                }
+            ]
+        },
+        {
+            "name": "COSTCO",
+            "branches": [
+                {
+                    "latitude": 32.820597,
+                    "longitude": 34.99353689999996
+                },
+                {
+                    "latitude": 32.8777507,
+                    "longitude": 34.889425325
+                }
+            ]
+        }
+    ]
+}
