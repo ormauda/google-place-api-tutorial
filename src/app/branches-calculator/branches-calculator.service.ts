@@ -8,6 +8,7 @@ import { IBranch } from '../models/IBranch';
 export abstract class BranchesCalculatorService {
     init: () => void
     getBranchesDistanceFrom: (latitude: number, longitude: number) => Array<IBranch>
+    calculateBestMarket: (sortedBranches: Array<IBranch>) => IMarket
 }
 
 @Injectable()
@@ -42,6 +43,10 @@ export class SimpleBranchesCalculatorService implements BranchesCalculatorServic
         })
 
         return branchesDistances;
+    }
+
+    public calculateBestMarket(sortedBranches: Array<IBranch>): IMarket {
+        return null;
     }
 
     private getData() {
