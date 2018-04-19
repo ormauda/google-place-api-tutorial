@@ -4,6 +4,7 @@ import { MapsAPILoader } from '@agm/core';
 import { } from '@types/googlemaps';
 import { BranchesCalculatorService, SimpleBranchesCalculatorService } from './branches-calculator/branches-calculator.service';
 import { IBranch } from './models/IBranch';
+import { IMarket } from './models/IMarket';
 
 @Component({
     selector: 'app-root',
@@ -17,7 +18,8 @@ export class AppComponent implements OnInit {
     title = 'app';
     public latitude: number;
     public longitude: number;
-    public branchesDistances: Array<IBranch>
+    public branchesDistances: Array<IBranch>;
+    public bestMarket: IMarket;
 
     @ViewChild("search")
     public searchElementRef: ElementRef;
@@ -60,6 +62,12 @@ export class AppComponent implements OnInit {
             this.branchesCalculatorService.getBranchesDistanceFrom(this.latitude, this.longitude);
 
         this.branchesDistances.sort((a: IBranch, b: IBranch) => a.distance > b.distance ? 1 : -1 );
+
+        this.calculateBestMarket();
+    }
+
+    private calculateBestMarket(): void {
+        this.bestMarket = this.branchesCalculatorService.calculateBestMarket(this.branchesDistances);
     }
 
     private setCurrentPosition() {

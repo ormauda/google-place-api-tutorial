@@ -5,8 +5,11 @@
     </div>
 </div>
 <button (click)="calculateDistances()">send</button>
+<div *ngIf="bestMarket !== undefined">
+    the best branch is: {{bestMarket.name}}
+</div>
 <ul>
     <li *ngFor="let branch of branchesDistances">
-        {{branch.name}}, and distance in meters: {{branch.distance}}
+        {{branch.name}}, and distance is: {{branch.distance}} meters.
     </li>
 </ul>
