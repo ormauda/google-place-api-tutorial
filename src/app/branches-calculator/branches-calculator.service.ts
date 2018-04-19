@@ -15,6 +15,7 @@ export abstract class BranchesCalculatorService {
 export class SimpleBranchesCalculatorService implements BranchesCalculatorService {
 
     private markets: Array<IMarket>;
+    private readonly RELEVANT_RADIUS: number = 50000;
 
     constructor(private http: HttpClient) { }
 
@@ -50,6 +51,9 @@ export class SimpleBranchesCalculatorService implements BranchesCalculatorServic
         this.markets.forEach((market: IMarket) => marketsRankings.set(market, 0));
 
         sortedBranches.forEach((sortedBranch: IBranch) => {
+            if (sortedBranch.distance > this.RELEVANT_RADIUS) {
+                return;
+            }
             let market: IMarket = this.markets.find((market: IMarket) => {
                 return market.branches.some((branch: IBranch) => branch.id === sortedBranch.id)
             })
@@ -63,7 +67,7 @@ export class SimpleBranchesCalculatorService implements BranchesCalculatorServic
         let bestMarket: IMarket = Array.from(marketsRankings.keys()).reduce((a: IMarket, b: IMarket) =>
             marketsRankings.get(a) > marketsRankings.get(b) ? a : b
         );
-        
+
         return bestMarket;
     }
 
